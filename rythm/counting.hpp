@@ -13,8 +13,8 @@ constexpr auto take_nth = [](auto n) {
 constexpr auto drop_n_take_m = [](auto const off, auto const on) { 
     auto n = off + 1, m = on, active = false;
     return [off, on, active, n, m]() mutable { 
-        return active ? !--m && (active = !active, m = on)
-                      : !--n && (active = !active, n = off)
+        return active ? !--m && (active = !active, (m = on))
+                      : !--n && (active = !active, (n = off))
                       , active;
     }; 
 };
@@ -22,8 +22,8 @@ constexpr auto drop_n_take_m = [](auto const off, auto const on) {
 constexpr auto take_n_drop_m = [](auto const on, auto const off) { 
     auto n = off, m = on + 1, active = true;
     return [off, on, active, n, m]() mutable { 
-        return active ? !--m && (active = !active, m = on)
-                      : !--n && (active = !active, n = off)
+        return active ? !--m && (active = !active, (m = on))
+                      : !--n && (active = !active, (n = off))
                       , active;
     }; 
 };
