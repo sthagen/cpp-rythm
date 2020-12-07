@@ -31,4 +31,8 @@
 *.out
 *.app
 
+# local dev artifacts
 .idea
+
+# local build/test artifacts
+cmake-build-debug
