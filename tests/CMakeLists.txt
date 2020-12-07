@@ -14,7 +14,6 @@ set(tests
 
 add_executable(rythm_test test.cpp ${tests})
 target_include_directories(rythm_test PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
-target_link_libraries(rythm_test PUBLIC rythm)
 set_target_properties(rythm_test PROPERTIES CXX_STANDARD 17)
 
 enable_testing()
