@@ -14,8 +14,8 @@ TEST_CASE("Dropping first three and then always taking (four times)", "[positive
     CHECK(!drop_3());
     CHECK(!drop_3());
     CHECK(!drop_3());
-    CHECK(drop_1());
-    CHECK(drop_1());
-    CHECK(drop_1());
-    REQUIRE(drop_1());
+    CHECK(drop_3());
+    CHECK(drop_3());
+    CHECK(drop_3());
+    REQUIRE(drop_3());
 }
