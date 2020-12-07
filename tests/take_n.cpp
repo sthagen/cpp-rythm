@@ -1,5 +1,5 @@
 #include "catch.hpp"
-#include "../include/rythm/counting.hpp"
+#include "../rythm/counting.hpp"
 
 TEST_CASE("Taking only first and then always dropping (three times)", "[positive]") {
     auto take_1 = take_n(1);
