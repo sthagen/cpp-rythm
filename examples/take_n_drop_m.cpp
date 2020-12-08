@@ -11,15 +11,15 @@ int main() {
     }
     std::cout << "Dropping after " << how_many++ << " iterations.\n";
     while (!take_3_drop_2()) {
-        std::cout << "  " << ++how_many << ": Further dropping ...\n";
+        std::cout << "  " << ++how_many << ": Continued dropping ...\n";
     }
     std::cout << "Taking after " << how_many++ << " iterations.\n";
     while (take_3_drop_2()) {
-        std::cout << "  " << ++how_many << ": Taking ...\n";
+        std::cout << "  " << ++how_many << ": Continued taking ...\n";
     }
     std::cout << "Dropping after " << how_many++ << " iterations.\n";
     while (!take_3_drop_2()) {
-        std::cout << "  " << ++how_many << ": Further dropping ...\n";
+        std::cout << "  " << ++how_many << ": Continued dropping ...\n";
     }
     return how_many == (n + m) * 2 ? 0 : how_many;
 }
