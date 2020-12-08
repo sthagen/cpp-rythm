@@ -1,6 +1,13 @@
 #include "catch.hpp"
 #include "../rythm/counting.hpp"
 
+TEST_CASE("Dropping none and always taking (three times)", "[positive]") {
+    auto drop_0 = drop_n(0);
+    CHECK(drop_0());
+    CHECK(drop_0());
+    REQUIRE(drop_0());
+}
+
 TEST_CASE("Dropping only first and then always taking (three times)", "[positive]") {
     auto drop_1 = drop_n(1);
     CHECK(!drop_1());
