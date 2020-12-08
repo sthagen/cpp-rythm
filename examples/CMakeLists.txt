@@ -1,8 +1,4 @@
-set(examples
-    drop_n.cpp
-    take_n.cpp
-    drop_nth.cpp
-    take_nth.cpp)
+enable_testing()
 
 rythm_add_examples(drop_n "drop_n.cpp")
 rythm_add_examples(take_n "take_n.cpp")
