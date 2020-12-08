@@ -9,10 +9,10 @@ int main() {
     while (!take_every_third()) {
         std::cout << "  " << ++how_many << ": Dropping ...\n";
     }
-    std::cout << "Taking after " << how_many << " iterations.\n";
+    std::cout << "Taking after " << how_many++ << " iterations.\n";
     while (!take_every_third()) {
         std::cout << "  " << ++how_many << ": Dropping ...\n";
     }
-    std::cout << "Taking after " << how_many << " iterations.\n";
-    return how_many == 2 * (n - 1) ? 0 : 1;
+    std::cout << "Taking after " << how_many++ << " iterations.\n";
+    return how_many == n * 2 ? 0 : 1;
 }
