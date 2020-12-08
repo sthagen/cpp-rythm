@@ -4,7 +4,7 @@
 int main() {
     auto n = 2;
     std::cout << "Example: Using drop_n(" << n << ") to drop the first " << n << " iterations.\n";
-    auto drop_2 = drop_n(2);
+    auto drop_2 = drop_n(n);
     auto how_many = 0;
     while (!drop_2()) {
         std::cout << "  " << ++how_many << ": Dropping ...\n";
