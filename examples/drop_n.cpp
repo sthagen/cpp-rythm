@@ -10,5 +10,5 @@ int main() {
         std::cout << "  " << ++how_many << ": Dropping ...\n";
     }
     std::cout << "Taking after " << how_many << " iterations.\n";
-    return how_many == 2 ? 0 : 1;
+    return how_many == n ? 0 : 1;
 }
