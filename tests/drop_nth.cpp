@@ -15,7 +15,7 @@ TEST_CASE("Dropping every invocation (three periods check)", "[positive]") {
     REQUIRE(!drop_every());
 }
 
-TEST_CASE("Taking only upon every other invocation (three periods check)", "[positive]") {
+TEST_CASE("Dropping every other invocation (three periods check)", "[positive]") {
     auto drop_every_other = drop_nth(2);
     CHECK(drop_every_other());
     CHECK(!drop_every_other());
