@@ -5,11 +5,11 @@ TEST_CASE("Drop nothing and take 2 always alternating (checking three periods a 
     auto drop_0_take_2 = drop_n_take_m(0, 2);
     CHECK(drop_0_take_2());
     CHECK(drop_0_take_2());
-    CHECK(!drop_0_take_2());
-    CHECK(!drop_0_take_2());
-    CHECK(!drop_0_take_2());
-    REQUIRE(!drop_0_take_2());
-    WARN("Unwanted behaviour detected for drop_n_take_m(0, 2) - always dropping after initial two takes.");
+    CHECK(drop_0_take_2());
+    CHECK(drop_0_take_2());
+    CHECK(drop_0_take_2());
+    REQUIRE(drop_0_take_2());
+    INFO("Note behaviour for drop_n_take_m(0, positive_integer) - equivalent to take_n(1).");
 }
 
 TEST_CASE("Drop one and take one always alternating (checking three periods a 1 + 1)", "[positive]") {
