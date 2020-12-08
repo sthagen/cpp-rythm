@@ -9,17 +9,17 @@ int main() {
     while (take_3_drop_2()) {
         std::cout << "  " << ++how_many << ": Taking ...\n";
     }
-    ++how_many;
+    std::cout << "Dropping after " << how_many++ << " iterations.\n";
     while (!take_3_drop_2()) {
-        std::cout << "  " << ++how_many << ": Dropping ...\n";
+        std::cout << "  " << ++how_many << ": Further dropping ...\n";
     }
-    ++how_many;
+    std::cout << "Taking after " << how_many++ << " iterations.\n";
     while (take_3_drop_2()) {
         std::cout << "  " << ++how_many << ": Taking ...\n";
     }
-    ++how_many;
+    std::cout << "Dropping after " << how_many++ << " iterations.\n";
     while (!take_3_drop_2()) {
-        std::cout << "  " << ++how_many << ": Dropping ...\n";
+        std::cout << "  " << ++how_many << ": Further dropping ...\n";
     }
     return how_many == (n + m) * 2 ? 0 : how_many;
 }
