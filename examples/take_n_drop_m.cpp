@@ -7,16 +7,19 @@ int main() {
     auto take_3_drop_2 = take_n_drop_m(n, m);
     auto how_many = 0;
     while (take_3_drop_2()) {
+        std::cout << "  " << ++how_many << ": Taking ...\n";
+    }
+    ++how_many;
+    while (!take_3_drop_2()) {
         std::cout << "  " << ++how_many << ": Dropping ...\n";
     }
-    while (!take_3_drop_2()) {
-        std::cout << "Dropping after " << how_many++ << " iterations.\n";
-    }
+    ++how_many;
     while (take_3_drop_2()) {
+        std::cout << "  " << ++how_many << ": Taking ...\n";
+    }
+    ++how_many;
+    while (!take_3_drop_2()) {
         std::cout << "  " << ++how_many << ": Dropping ...\n";
     }
-    while (!take_3_drop_2()) {
-        std::cout << "Dropping after " << how_many++ << " iterations.\n";
-    }
-    return how_many == (n + m) * 2 ? 0 : 1;
+    return how_many == (n + m) * 2 ? 0 : how_many;
 }
