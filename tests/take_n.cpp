@@ -9,7 +9,6 @@ TEST_CASE("Taking only first and then always dropping (three times)", "[positive
     REQUIRE(!take_1());
 }
 
-
 TEST_CASE("Taking first two and then always dropping (three times)", "[positive]") {
     auto take_2 = take_n(2);
     CHECK(take_2());
