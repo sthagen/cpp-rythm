@@ -7,6 +7,6 @@ int main() {
     while (!drop_2()) {
         std::cout << "Iteration " << ++how_many << "\n";
     }
-    std::cout << Finished after " << how_many << " iterations.\n";
+    std::cout << "Finished after " << how_many << " iterations.\n";
     return how_many == 2 ? 0 : 1;
 }
