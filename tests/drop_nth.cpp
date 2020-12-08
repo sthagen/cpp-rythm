@@ -1,6 +1,13 @@
 #include "catch.hpp"
 #include "../rythm/counting.hpp"
 
+TEST_CASE("Dropping no invocation (three periods check)", "[positive]") {
+    auto drop_nothing = drop_nth(0);
+    CHECK(drop_nothing());
+    CHECK(drop_nothing());
+    REQUIRE(drop_nothing());
+}
+
 TEST_CASE("Dropping every invocation (three periods check)", "[positive]") {
     auto drop_every = drop_nth(1);
     CHECK(!drop_every());
