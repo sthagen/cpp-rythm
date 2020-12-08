@@ -17,6 +17,17 @@ TEST_CASE("Drop nothing and take everything always alternating (checking three t
     INFO("Note behaviour for drop_n_take_m(0, 1) - equivalent to drop_n(0) and take_n(1)");
 }
 
+TEST_CASE("Drop nothing and take 2 always alternating (checking three periods a 0 + 2)", "[positive]") {
+    auto drop_0_take_2 = drop_n_take_m(0, 2);
+    CHECK(drop_0_take_2());
+    CHECK(drop_0_take_2());
+    CHECK(drop_0_take_2());
+    CHECK(drop_0_take_2());
+    CHECK(drop_0_take_2());
+    REQUIRE(drop_0_take_2());
+    INFO("Note behaviour for drop_n_take_m(0, positive_integer) - equivalent to take_n(1).");
+}
+
 TEST_CASE("Drop 2 and take nothing always alternating (checking three periods a 2 + 0)", "[positive]") {
     auto drop_2_take_0 = drop_n_take_m(2, 0);
     CHECK(!drop_2_take_0());
