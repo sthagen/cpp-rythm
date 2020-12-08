@@ -1,6 +1,13 @@
 #include "catch.hpp"
 #include "../rythm/counting.hpp"
 
+TEST_CASE("Taking no invocation (three periods check)", "[positive]") {
+    auto take_nothing = take_nth(0);
+    CHECK(!take_nothing());
+    CHECK(!take_nothing());
+    REQUIRE(!take_nothing());
+}
+
 TEST_CASE("Taking every invocation (three periods check)", "[positive]") {
     auto take_every = take_nth(1);
     CHECK(take_every());
