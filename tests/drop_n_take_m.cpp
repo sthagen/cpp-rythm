@@ -9,6 +9,7 @@ TEST_CASE("Drop nothing and take 2 always alternating (checking three periods a 
     CHECK(!drop_0_take_2());
     CHECK(!drop_0_take_2());
     REQUIRE(!drop_0_take_2());
+    WARN("Unwanted behaviour detected for drop_n_take_m(0, 2) - always dropping after initial two takes.");
 }
 
 TEST_CASE("Drop 1 and take 2 always alternating (checking three periods a 1 + 2)", "[positive]") {
