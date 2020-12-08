@@ -1,6 +1,16 @@
 #include "catch.hpp"
 #include "../rythm/counting.hpp"
 
+TEST_CASE("Drop nothing and take 2 always alternating (checking three periods a 0 + 2)", "[negative]") {
+    auto drop_0_take_2 = drop_n_take_m(0, 2);
+    CHECK(drop_0_take_2());
+    CHECK(drop_0_take_2());
+    CHECK(!drop_0_take_2());
+    CHECK(!drop_0_take_2());
+    CHECK(!drop_0_take_2());
+    REQUIRE(!drop_0_take_2());
+}
+
 TEST_CASE("Drop 1 and take 2 always alternating (checking three periods a 1 + 2)", "[positive]") {
     auto drop_1_take_2 = drop_n_take_m(1, 2);
     CHECK(!drop_1_take_2());
