@@ -41,3 +41,11 @@ constexpr auto schmitt_trigger = [](T const low, T const high, bool initial_stat
         return state = (read > high) || (state && !(read < low));
     }; 
 };
+
+template <class T>
+constexpr auto schmitt_trigger_inverting = [](T const low, T const high, bool initial_state) { 
+    bool state = initial_state;
+    return [low, high, state](T read) mutable { 
+        return state = (read < low) || (state && !(read > high));
+    }; 
+};
