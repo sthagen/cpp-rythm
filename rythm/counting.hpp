@@ -35,7 +35,7 @@ constexpr auto take_n_drop_m = [](auto const on, auto const off) {
 };
 
 template <class T>
-constexpr bool schmitt_trigger = [](T const low, T const high, bool initial_state) { 
+constexpr auto schmitt_trigger = [](T const low, T const high, bool initial_state) { 
     bool state = initial_state;
     return [low, high, state](T read) mutable { 
         return state = (read > high) || (state && !(read < low));
