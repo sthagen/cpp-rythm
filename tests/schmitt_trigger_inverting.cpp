@@ -21,12 +21,13 @@ TEST_CASE("Cycling the inverted trigger (once)", "[positive]") {
         for (; m < high + step ; m += step) {
             CHECK(st(m) == expected_state);
         }
+        expected_state = true;
         CHECK(st(m) == expected_state);
         INFO("Sinking ...");
         for (; m > low - step; m -= step) {
             CHECK(st(m) == expected_state);
         }
-        expected_state = true;
+        expected_state = false;
         REQUIRE(st(m) == expected_state);
     } while (--cycles);
 }
