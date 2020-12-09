@@ -5,6 +5,8 @@ if(NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/catch.hpp)
 endif()
 
 set(tests
+    all_of.cpp
+    any_of.cpp
     drop_n.cpp
     take_n.cpp
     drop_nth.cpp
