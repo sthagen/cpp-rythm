@@ -1,3 +1,4 @@
+#include "catch.hpp"
 #include "../rythm/predicate.hpp"
 
 TEST_CASE("All of only true values yields true", "[positive]") {
