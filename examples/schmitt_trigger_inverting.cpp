@@ -1,11 +1,11 @@
 #include <iostream>
-#include "../rythm/counting.hpp"
+#include "../rythm/trigger.hpp"
 
 int main() {
     auto const low = -1.f, high = 2.f;
     bool const default_out = false;
     
-    auto st = schmitt_trigger_inverting<float>(low, high, default_out);
+    auto st = schmitt::trigger_inverting<float>(low, high, default_out);
    
     std::cout << "st.context("
               << low << ", " << high << ", " << default_out << "):\n";
