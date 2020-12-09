@@ -5,8 +5,8 @@ TEST_CASE("Two probes across the thresholds for the inverted trigger (once)", "[
     auto const low = -1.f, high = 2.f;
     bool const default_out = false;
     auto st = schmitt_trigger_inverting<float>(low, high, default_out);
-    CHECK(st(0.f));
-    REQUIRE(!st(high + 1.f));
+    CHECK(!st(0.f));
+    REQUIRE(st(high + 1.f));
 }
 
 TEST_CASE("Cycling the inverted trigger (once)", "[positive]") {
