@@ -1,12 +1,20 @@
 #include "catch.hpp"
 #include "../rythm/counting.hpp"
 
-TEST_CASE("Two probes across the thresholds for the inverted trigger (once)", "[positive]") {
+TEST_CASE("Two probes across the thresholds for the inverted trigger and float type (once)", "[positive]") {
     auto const low = -1.f, high = 2.f;
     bool const default_out = false;
     auto st = schmitt_trigger_inverting<float>(low, high, default_out);
     CHECK(!st(0.f));
     REQUIRE(st(high + 1.f));
+}
+
+TEST_CASE("Two probes across the thresholds for the inverted trigger and integral type (once)", "[positive]") {
+    auto const low = 0, high = 2;
+    bool const default_out = true;
+    auto st = schmitt_trigger_inverting<int>(low, high, default_out);
+    CHECK(st(0));
+    REQUIRE(!st(high + 42));
 }
 
 TEST_CASE("Cycling the inverted trigger (once)", "[positive]") {
