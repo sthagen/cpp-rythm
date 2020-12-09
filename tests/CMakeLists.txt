@@ -10,7 +10,8 @@ set(tests
     drop_nth.cpp
     take_nth.cpp
     drop_n_take_m.cpp
-    take_n_drop_m.cpp)
+    take_n_drop_m.cpp
+    schmitt_trigger.cpp)
 
 add_executable(rythm_test test.cpp ${tests})
 target_include_directories(rythm_test PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
