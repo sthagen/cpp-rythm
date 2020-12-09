@@ -1,4 +1,4 @@
 # cpp-rythm
 Header only behavior library
 
-**Note**: The default branch is `default`. :wink:
+**Note**: The default branch is `default`.
