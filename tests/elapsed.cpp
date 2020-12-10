@@ -38,3 +38,9 @@ TEST_CASE("Elapsed float called with start value returns plus wun returns return
     auto events = elapsed<float>(0.f);
     REQUIRE(events(1.f) == 1.0_a);
 }
+
+TEST_CASE("Elapsed double called with start value returns plus wun returns returns wun", "[positive]") {
+    using namespace Catch::literals;
+    auto events = elapsed<double>(0.);
+    REQUIRE(events(1.) == 1.0_a);
+}
