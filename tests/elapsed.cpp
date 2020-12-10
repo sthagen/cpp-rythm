@@ -32,3 +32,9 @@ TEST_CASE("Elapsed signed integral called with start value plus wun returns retu
     auto events = elapsed<int>(0);
     REQUIRE(events(1) == 1);
 }
+
+TEST_CASE("Elapsed float called with start value returns plus wun returns returns wun", "[positive]") {
+    using namespace Catch::literals;
+    auto events = elapsed<float>(0.f);
+    REQUIRE(events(1.f) == 1.0_a);
+}
