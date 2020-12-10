@@ -60,3 +60,9 @@ TEST_CASE("Elapsed float called with start value minus wun returns minus wun", "
     auto events = elapsed<float>(1.f);
     REQUIRE(events(0.f) == -1.0_a);
 }
+
+TEST_CASE("Elapsed double called with start value minus wun returns minus wun", "[positive]") {
+    using namespace Catch::literals;
+    auto events = elapsed<double>(1.);
+    REQUIRE(events(0.) == -1.0_a);
+}
