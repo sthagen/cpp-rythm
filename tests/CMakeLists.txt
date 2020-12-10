@@ -14,7 +14,8 @@ set(tests
     drop_n_take_m.cpp
     take_n_drop_m.cpp
     schmitt_trigger.cpp
-    schmitt_trigger_inverting.cpp)
+    schmitt_trigger_inverting.cpp
+    elapsed.cpp)
 
 add_executable(rythm_test test.cpp ${tests})
 target_include_directories(rythm_test PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
