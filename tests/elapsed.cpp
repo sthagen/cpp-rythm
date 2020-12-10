@@ -22,3 +22,8 @@ TEST_CASE("Elapsed double called with start value returns zero", "[positive]") {
     auto events = elapsed<double>(0.);
     REQUIRE(events(0.) == 0.0_a);
 }
+
+TEST_CASE("Elapsed unsigned integral called with start value plus wun returns returns wun", "[positive]") {
+    auto events = elapsed<size_t>(0);
+    REQUIRE(events(1) == 1);
+}
