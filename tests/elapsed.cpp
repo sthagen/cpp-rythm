@@ -49,3 +49,8 @@ TEST_CASE("Elapsed unsigned integral called with start value minus wun returns m
     auto events = elapsed<size_t>(1);
     REQUIRE(events(0) == 0xffff'ffff'ffff'ffff);
 }
+
+TEST_CASE("Elapsed signed integral called with start value minus wun returns minus wun", "[positive]") {
+    auto events = elapsed<int>(1);
+    REQUIRE(events(0) == -1);
+}
