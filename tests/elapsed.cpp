@@ -10,3 +10,9 @@ TEST_CASE("Elapsed signed integral called with start value returns zero", "[posi
     auto events = elapsed<int>(0);
     REQUIRE(!events(0));
 }
+
+TEST_CASE("Elapsed float called with start value returns zero", "[positive]") {
+    using namespace Catch::literals;
+    auto events = elapsed<float>(0.f);
+    REQUIRE(events(0.f) == 0.0_a);
+}
