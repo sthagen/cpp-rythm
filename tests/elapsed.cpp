@@ -27,3 +27,8 @@ TEST_CASE("Elapsed unsigned integral called with start value plus wun returns re
     auto events = elapsed<size_t>(0);
     REQUIRE(events(1) == 1);
 }
+
+TEST_CASE("Elapsed signed integral called with start value plus wun returns returns wun", "[positive]") {
+    auto events = elapsed<int>(0);
+    REQUIRE(events(1) == 1);
+}
