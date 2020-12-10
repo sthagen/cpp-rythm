@@ -44,3 +44,8 @@ TEST_CASE("Elapsed double called with start value returns plus wun returns retur
     auto events = elapsed<double>(0.);
     REQUIRE(events(1.) == 1.0_a);
 }
+
+TEST_CASE("Elapsed unsigned integral called with start value minus wun returns returns maximal value (size_t)", "[positive]") {
+    auto events = elapsed<size_t>(1);
+    REQUIRE(events(0) == 42);
+}
