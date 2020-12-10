@@ -33,3 +33,7 @@ constexpr auto take_n_drop_m = [](auto const on, auto const off) {
                       , active;
     }; 
 };
+
+template<typename T>
+constexpr auto elapsed = [](T const start) {
+    return [start](T const stop) { return stop - start; }; };
