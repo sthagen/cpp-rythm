@@ -1,7 +1,7 @@
 #include "catch.hpp"
 #include "../rythm/trigger.hpp"
 
-TEST_CASE("Two probes across the thresholds", "[positive]") {
+TEST_CASE("Schmitt trigger with two probes across the thresholds", "[positive]") {
     auto const low = -1.f, high = 2.f;
     bool const default_out = false;
     auto st = schmitt::trigger<float>(low, high, default_out);
@@ -9,7 +9,7 @@ TEST_CASE("Two probes across the thresholds", "[positive]") {
     REQUIRE(st(high + 1.f));
 }
 
-TEST_CASE("Cycling (once)", "[positive]") {
+TEST_CASE("Schmitt trigger cycling (once)", "[positive]") {
     auto const low = 1.f, high = 2.f;
     bool const default_out = false;
     auto st = schmitt::trigger<float>(low, high, default_out);
