@@ -11,3 +11,8 @@ TEST_CASE("All of a single integral value wun yields true", "[positive]") {
     int t{1};
     REQUIRE(all_of(t));
 }
+
+TEST_CASE("All of a single integral value zero yields false", "[positive]") {
+    int f{0};
+    REQUIRE(!all_of(f));
+}
