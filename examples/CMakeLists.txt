@@ -1,5 +1,8 @@
 enable_testing()
 
+rythm_add_examples(any_of "any_of.cpp")
+rythm_add_examples(all_of "all_of.cpp")
+rythm_add_examples(none_of "none_of.cpp")
 rythm_add_examples(drop_n "drop_n.cpp")
 rythm_add_examples(take_n "take_n.cpp")
 rythm_add_examples(drop_nth "drop_nth.cpp")
