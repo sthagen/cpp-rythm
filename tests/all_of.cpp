@@ -47,3 +47,8 @@ TEST_CASE("All of two any ofs of single true values yields true", "[positive]") 
     bool t{true};
     REQUIRE(all_of(any_of(t), any_of(t)));
 }
+
+TEST_CASE("All of two none ofs of single true values yields false", "[positive]") {
+    bool t{true};
+    REQUIRE(all_of(none_of(t), none_of(t)));
+}
