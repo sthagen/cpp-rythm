@@ -38,3 +38,8 @@ TEST_CASE("Any of a single false value yields false", "[positive]") {
     bool f{false};
     REQUIRE(!any_of(f));
 }
+
+TEST_CASE("Any of an any of a single true value yields true", "[positive]") {
+    bool t{true};
+    REQUIRE(any_of(any_of(t)));
+}
