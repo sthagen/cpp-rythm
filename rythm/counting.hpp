@@ -39,13 +39,13 @@ constexpr auto elapsed = [](T const start) {
     return [start](T const stop) { return stop - start; }; };
 
 template<typename A>
-constexpr auto count_true = [](A a = A{0}) { return [a](auto c) mutable { return c ? ++a : a; }; };
+constexpr auto count_true = [](A a = A{0}) { auto _a{a}; return [_a](auto c) mutable { return c ? ++_a : _a; }; };
 
 template<typename A>
-constexpr auto count_false = [](A a = A{0}) { return [a](auto c) mutable { return !c ? ++a : a; }; };
+constexpr auto count_false = [](A a = A{0}) { auto _a{a}; return [_a](auto c) mutable { return !c ? ++_a : _a; }; };
 
 template<typename A, typename Z>
-constexpr auto count_zero = [](A a = A{0}) { return [a](Z z) mutable { return z == Z{0} ? ++a : a; }; };
+constexpr auto count_zero = [](A a = A{0}) { auto _a{a}; return [_a](Z z) mutable { return z == Z{0} ? ++_a : _a; }; };
 
 template<typename P, typename A>
 constexpr auto count_if = [](P p, A a = A{0}) { auto _a{a}; return [p, _a](auto c) mutable { return p(c) ? ++_a : _a; }; };
