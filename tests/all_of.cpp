@@ -27,3 +27,8 @@ TEST_CASE("All of a single true value yields true", "[positive]") {
     bool t{true};
     REQUIRE(all_of(t));
 }
+
+TEST_CASE("All of a single false value yields false", "[positive]") {
+    bool f{false};
+    REQUIRE(!all_of(f));
+}
