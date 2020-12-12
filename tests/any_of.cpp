@@ -65,3 +65,9 @@ TEST_CASE("Zero if any of only a single true value zeroes the target", "[positiv
     double k{42.};
     REQUIRE(zero_if_any_of(k, t) == 0._a);
 }
+
+TEST_CASE("Other if any of only a single true value sets the target to the other value", "[positive]") {
+    bool t{true};
+    double k{42.}, o{3.14156};
+    REQUIRE(other_if_any_of(k, o, t) == o);
+}
