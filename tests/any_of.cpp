@@ -58,3 +58,10 @@ TEST_CASE("Any of two mone ofs of single true values yields false", "[positive]"
     bool t{true};
     REQUIRE(!any_of(none_of(t), none_of(t)));
 }
+
+TEST_CASE("Zero if any of only a single true value zeroes the target", "[positive]") {
+    using namespace Catch::literals;
+    bool t{true};
+    double k{42.};
+    REQUIRE(zero_if_any_of(k, t) == 0._a);
+}
