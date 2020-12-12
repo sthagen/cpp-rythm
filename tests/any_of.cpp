@@ -18,3 +18,8 @@ TEST_CASE("Any of not only true values yields true", "[positive]") {
     bool t{true}, f{false};
     REQUIRE(any_of(true, ct, true, t, true, f));
 }
+
+TEST_CASE("Any of a single integral value wun yields true", "[positive]") {
+    int t{1};
+    REQUIRE(any_of(t));
+}
