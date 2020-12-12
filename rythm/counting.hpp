@@ -37,3 +37,6 @@ constexpr auto take_n_drop_m = [](auto const on, auto const off) {
 template<typename T>
 constexpr auto elapsed = [](T const start) {
     return [start](T const stop) { return stop - start; }; };
+
+template<typename A>
+constexpr auto count_true = [](A a = A{0}) { return [a](auto c) mutable { return c ? ++a : a; }; };
