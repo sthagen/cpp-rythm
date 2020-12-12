@@ -42,3 +42,8 @@ TEST_CASE("All of two all ofs of single true values yields true", "[positive]") 
     bool t{true};
     REQUIRE(all_of(all_of(t), all_of(t)));
 }
+
+TEST_CASE("All of two any ofs of single true values yields true", "[positive]") {
+    bool t{true};
+    REQUIRE(all_of(any_of(t), any_of(t)));
+}
