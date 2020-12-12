@@ -40,3 +40,6 @@ constexpr auto elapsed = [](T const start) {
 
 template<typename A>
 constexpr auto count_true = [](A a = A{0}) { return [a](auto c) mutable { return c ? ++a : a; }; };
+
+template<typename A>
+constexpr auto count_false = [](A a = A{0}) { return [a](auto c) mutable { return !c ? ++a : a; }; };
