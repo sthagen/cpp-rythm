@@ -37,3 +37,8 @@ TEST_CASE("All of an all of a single true value yields true", "[positive]") {
     bool t{true};
     REQUIRE(all_of(all_of(t)));
 }
+
+TEST_CASE("All of two all ofs of single true values yields true", "[positive]") {
+    bool t{true};
+    REQUIRE(all_of(all_of(t), all_of(t)));
+}
