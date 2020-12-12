@@ -30,3 +30,11 @@ TEST_CASE("Count else with explicit initial value for predicate matching does no
     auto small_cases = count_else<decltype(more_than_five), decltype(initial)>(more_than_five, initial);
     REQUIRE(small_cases(threshold + 1) == initial);
 }
+
+TEST_CASE("Count else with explicit initial value for predicate not matching does increment", "[positive]") {
+    auto const threshold{5};
+    size_t const initial{42};
+    auto more_than_five = [](auto x){ return x > threshold;};
+    auto small_cases = count_else<decltype(more_than_five), decltype(initial)>(more_than_five, initial);
+    REQUIRE(small_cases(threshold - 1) == initial + 1);
+}
