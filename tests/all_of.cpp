@@ -52,3 +52,10 @@ TEST_CASE("All of two none ofs of single true values yields false", "[positive]"
     bool t{true};
     REQUIRE(!all_of(none_of(t), none_of(t)));
 }
+
+TEST_CASE("Zero if all of only a single true value zeroes the target", "[positive]") {
+    using namespace Catch::literals;
+    bool t{true};
+    double k{42.};
+    REQUIRE(zero_if_all_of(k, t) == 0._a);
+}
