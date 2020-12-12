@@ -48,7 +48,7 @@ template<typename A, typename Z>
 constexpr auto count_zero = [](A a = A{0}) { return [a](Z z) mutable { return z == Z{0} ? ++a : a; }; };
 
 template<typename P, typename A>
-constexpr auto count_if = [](P p, A a = A{0}) { return [p, a](auto c) mutable { return p(c) ? ++a : a; }; };
+constexpr auto count_if = [](P p, A a = A{0}) { auto _a{a}; return [p, _a](auto c) mutable { return p(c) ? ++_a : _a; }; };
 
 template<typename P, typename A>
 constexpr auto count_else = [](P p, A a = A{0}) { return [p, a](auto c) mutable { return !p(c) ? ++a : a; }; };
