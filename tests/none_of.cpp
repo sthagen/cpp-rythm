@@ -37,3 +37,8 @@ TEST_CASE("None of a none of a single true value yields true", "[positive]") {
     bool t{true};
     REQUIRE(none_of(none_of(t)));
 }
+
+TEST_CASE("None of two none ofs of single true values yields true", "[positive]") {
+    bool t{true};
+    REQUIRE(none_of(none_of(t), none_of(t)));
+}
