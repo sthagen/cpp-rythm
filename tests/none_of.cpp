@@ -22,3 +22,8 @@ TEST_CASE("None of a single integral value zero yields true", "[positive]") {
     int f{0};
     REQUIRE(none_of(f));
 }
+
+TEST_CASE("None of a single true value yields false", "[positive]") {
+    bool t{true};
+    REQUIRE(!none_of(t));
+}
