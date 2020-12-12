@@ -6,3 +6,9 @@ TEST_CASE("None of only true values yields false", "[positive]") {
     bool t{true};
     REQUIRE(!none_of(true, ct, true, t, true));
 }
+
+TEST_CASE("None of not only true values yields false", "[positive]") {
+    bool const ct{true};
+    bool t{true}, f{false};
+    REQUIRE(!none_of(true, ct, true, t, true, f));
+}
