@@ -85,3 +85,6 @@ bool all_of(T... t) { return (... && t); }
 
 template<typename... T>
 bool any_of(T... t) { return (... || t); }
+
+template<typename... T>
+bool none_of(T... t) { return !(... || t); }
