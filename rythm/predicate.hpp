@@ -88,3 +88,6 @@ bool any_of(T... t) { return (... || t); }
 
 template<typename... T>
 bool none_of(T... t) { return !(... || t); }
+
+template<typename K, typename... T>
+K zero_if_all_of(K k, T... t) { return (... && t) ? K{0} : k; }
