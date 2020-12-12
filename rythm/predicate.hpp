@@ -103,3 +103,6 @@ K other_if_all_of(K k, K o, T... t) { return (... && t) ? o : k; }
 
 template<typename K, typename... T>
 K other_if_any_of(K k, K o, T... t) { return (... || t) ? o : k; }
+
+template<typename K, typename... T>
+K other_if_none_of(K k, K o, T... t) { return !(... || t) ? o : k; }
