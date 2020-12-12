@@ -51,5 +51,11 @@ TEST_CASE("None of two any ofs of single true values yields false", "[positive]"
 TEST_CASE("Zero if none of only a single true value does not zero the target", "[positive]") {
     bool t{true};
     double k{42.};
-    REQUIRE(zero_if_all_of(k, t) == k);
+    REQUIRE(zero_if_none_of(k, t) == k);
+}
+
+TEST_CASE("Other if none of only a single true value does not set the target to the other value", "[positive]") {
+    bool t{true};
+    double k{42.}, o{3.14156};
+    REQUIRE(other_if_none_of(k, o, t) == k);
 }
