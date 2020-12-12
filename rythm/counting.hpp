@@ -46,3 +46,6 @@ constexpr auto count_false = [](A a = A{0}) { return [a](auto c) mutable { retur
 
 template<typename A, typename Z>
 constexpr auto count_zero = [](A a = A{0}) { return [a](Z z) mutable { return z == Z{0} ? ++a : a; }; };
+
+template<typename P, typename A>
+constexpr auto count_if = [](P p, A a = A{0}) { return [p, a](auto c) mutable { return p(c) ? ++a : a; }; };
