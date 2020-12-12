@@ -16,3 +16,9 @@ TEST_CASE("All of a single integral value zero yields false", "[positive]") {
     int f{0};
     REQUIRE(!all_of(f));
 }
+
+TEST_CASE("All of not only true values yields false", "[positive]") {
+    bool const ct{true};
+    bool t{true}, f{false};
+    REQUIRE(!all_of(true, ct, true, t, true, f));
+}
