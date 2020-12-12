@@ -23,3 +23,8 @@ TEST_CASE("Any of a single integral value wun yields true", "[positive]") {
     int t{1};
     REQUIRE(any_of(t));
 }
+
+TEST_CASE("Any of a single integral value zero yields false", "[positive]") {
+    int f{0};
+    REQUIRE(!any_of(f));
+}
