@@ -22,3 +22,8 @@ TEST_CASE("All of not only true values yields false", "[positive]") {
     bool t{true}, f{false};
     REQUIRE(!all_of(true, ct, true, t, true, f));
 }
+
+TEST_CASE("All of a single true value yields true", "[positive]") {
+    bool t{true};
+    REQUIRE(all_of(t));
+}
