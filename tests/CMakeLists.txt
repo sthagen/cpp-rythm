@@ -7,6 +7,7 @@ endif()
 set(tests
     all_of.cpp
     any_of.cpp
+    none_of.cpp
     drop_n.cpp
     take_n.cpp
     drop_nth.cpp
