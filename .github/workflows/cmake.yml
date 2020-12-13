@@ -46,6 +46,7 @@ jobs:
       run: | 
         examples/all_of
         examples/any_of
+        examples/count_else
         examples/drop_n
         examples/drop_n_take_m
         examples/drop_nth
