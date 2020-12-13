@@ -14,3 +14,11 @@ TEST_CASE("Count if for predicate not matching does not increment", "[positive]"
     auto small_cases = count_if<decltype(more_than_five), size_t>(more_than_five);
     REQUIRE(small_cases(threshold - 1) == 0);
 }
+
+TEST_CASE("Count if for predicate not matching and then matching does increment once", "[positive]") {
+    auto const threshold{5};
+    auto more_than_five = [](auto x){ return x > threshold;};
+    auto small_cases = count_if<decltype(more_than_five), size_t>(more_than_five);
+    CHECK(small_cases(threshold - 1) == 0);
+    REQUIRE(small_cases(threshold + 1) == 1);
+}
