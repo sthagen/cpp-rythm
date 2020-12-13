@@ -13,7 +13,7 @@ TEST_CASE("Count zero for zero does increment", "[positive]") {
 
 TEST_CASE("Count zero for zero and then non-zero does increment once", "[positive]") {
     auto zeroes = count_zero<size_t, unsigned short>();
-    CHECK(zeroes(0) == 0);
+    CHECK(zeroes(0) == 1);
     REQUIRE(zeroes(42) == 1);
 }
 
