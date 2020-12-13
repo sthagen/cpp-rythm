@@ -52,7 +52,7 @@ jobs:
         examples/elapsed
         examples/none_of
         examples/schmitt_trigger
-        examples/schmitt_trigger_inverted
+        examples/schmitt_trigger_inverting
         examples/take_n
         examples/take_n_drop_m
         examples/take_nth
