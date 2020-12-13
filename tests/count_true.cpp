@@ -22,3 +22,9 @@ TEST_CASE("Count true with explicit initial value for true does increment", "[po
     auto successes = count_true<decltype(initial)>(initial);
     REQUIRE(successes(true) == initial + 1);
 }
+
+TEST_CASE("Count true with explicit initial value for false does not increment", "[positive]") {
+    size_t const initial{42};
+    auto successes = count_true<decltype(initial)>(initial);
+    REQUIRE(successes(false) == initial);
+}
