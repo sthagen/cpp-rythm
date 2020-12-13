@@ -19,7 +19,12 @@ TEST_CASE("Count false for true and then false does increment once", "[positive]
 
 TEST_CASE("Count false with explicit initial value for true does not increment", "[positive]") {
     size_t const initial{42};
-    auto more_than_five = [](auto x){ return x > threshold;};
     auto failures = count_false<decltype(initial)>(initial);
     REQUIRE(failures(true) == initial);
+}
+
+TEST_CASE("Count false with explicit initial value for false does increment", "[positive]") {
+    size_t const initial{42};
+    auto failures = count_false<decltype(initial)>(initial);
+    REQUIRE(failures(false) == initial + 1);
 }
