@@ -49,6 +49,7 @@ constexpr auto elapsed = [](T const start) {
 template<typename A>
 constexpr auto count_true = [](A a = A{0}) { auto _a{a}; return [_a](auto c) mutable { return c ? ++_a : _a; }; };
 
+// Yield accumulated count from offset a when called with a falsy argument.
 template<typename A>
 constexpr auto count_false = [](A a = A{0}) { auto _a{a}; return [_a](auto c) mutable { return !c ? ++_a : _a; }; };
 
