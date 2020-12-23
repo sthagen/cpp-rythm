@@ -61,5 +61,6 @@ constexpr auto count_zero = [](A a = A{0}) { auto _a{a}; return [_a](Z z) mutabl
 template<typename P, typename A>
 constexpr auto count_if = [](P p, A a = A{0}) { auto _a{a}; return [p, _a](auto c) mutable { return p(c) ? ++_a : _a; }; };
 
+// Yield accumulated count from offset a when called with an argument c that does not fulfill the predicate p.
 template<typename P, typename A>
 constexpr auto count_else = [](P p, A a = A{0}) { auto _a{a}; return [p, _a](auto c) mutable { return !p(c) ? ++_a : _a; }; };
