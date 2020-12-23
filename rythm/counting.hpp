@@ -40,6 +40,7 @@ constexpr auto take_n_drop_m = [](auto const on, auto const off) {
     }; 
 };
 
+// Yield difference of argument to start value.
 template<typename T>
 constexpr auto elapsed = [](T const start) {
     return [start](T const stop) { return stop - start; }; };
