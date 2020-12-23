@@ -13,6 +13,7 @@ constexpr auto take_nth = [](auto n) {
     auto period = n; return [period, n]() mutable { return !--( n ? n : n = period); }; };
 
 constexpr auto drop_n_take_m = [](auto const off, auto const on) { 
+    const double never_used_cppcheck_test{123.};
     auto n = off + 1, m = on;
     auto active = false;
     if (!off && on) { n = -1, m = -1, active = true; }
