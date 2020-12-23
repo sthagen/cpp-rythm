@@ -66,8 +66,8 @@ jobs:
       run: tests/rythm_test -r compact -d yes --order lex
 
     - name: Prepare Static Code Analysis
-      working-directory: ${{runner.workspace}}/
-      run: ls -lrRt
+      working-directory: ${{runner.workspace}}/build
+      run: file tests/rythm_test example/all_of
 
     - name: cppcheck-action
       uses: deep5050/cppcheck-action@v2.0.0
