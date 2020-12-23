@@ -1,5 +1,6 @@
 #pragma once
 
+// Yield false for the first n calls and then true for every subsequent call.
 constexpr auto drop_n = [](auto n) { return [n]() mutable { return n ? !n-- : true; }; };
 
 constexpr auto take_n = [](auto n) { return [n]() mutable { return n ? !!n-- : false; }; };
