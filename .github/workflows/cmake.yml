@@ -67,7 +67,7 @@ jobs:
 
     - name: Prepare Static Code Analysis
       working-directory: ${{runner.workspace}}/
-      run: tree
+      run: ls -lrRt
 
     - name: cppcheck-action
       uses: deep5050/cppcheck-action@v2.0.0
