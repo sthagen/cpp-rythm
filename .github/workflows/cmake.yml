@@ -67,8 +67,4 @@ jobs:
 
     - name: Prepare Static Code Analysis
       working-directory: ${{runner.workspace}}/build
-      run: file tests/rythm_test examples/all_of
-
-    - name: cppcheck-action
-      uses: deep5050/cppcheck-action@v2.0.0
-      
+      run: file tests/rythm_test examples/all_of      
