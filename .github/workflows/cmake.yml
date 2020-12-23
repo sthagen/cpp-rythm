@@ -65,5 +65,10 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: tests/rythm_test -r compact -d yes --order lex
 
+    - name: Prepare Static Code Analysis
+      working-directory: ${{runner.workspace}}/build
+      run: file tests/rythm_test examples/all_of
+
     - name: cppcheck-action
       uses: deep5050/cppcheck-action@v2.0.0
+      
