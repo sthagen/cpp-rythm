@@ -3,6 +3,7 @@
 // Yield false for the first n calls and then true for every subsequent call.
 constexpr auto drop_n = [](auto n) { return [n]() mutable { return n ? !n-- : true; }; };
 
+// Yield true for the first n calls and then false for every subsequent call.
 constexpr auto take_n = [](auto n) { return [n]() mutable { return n ? !!n-- : false; }; };
 
 constexpr auto drop_nth = [](auto n) { 
