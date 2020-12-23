@@ -14,6 +14,7 @@ constexpr auto drop_nth = [](auto n) {
 constexpr auto take_nth = [](auto n) { 
     auto period = n; return [period, n]() mutable { return !--( n ? n : n = period); }; };
 
+// Yield alternating false for n calls and then true for m calls.
 constexpr auto drop_n_take_m = [](auto const off, auto const on) { 
     auto n = off + 1, m = on;
     auto active = false;
