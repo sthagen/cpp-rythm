@@ -53,6 +53,7 @@ constexpr auto count_true = [](A a = A{0}) { auto _a{a}; return [_a](auto c) mut
 template<typename A>
 constexpr auto count_false = [](A a = A{0}) { auto _a{a}; return [_a](auto c) mutable { return !c ? ++_a : _a; }; };
 
+// Yield accumulated count from offset a when called with an argument equal to the zero initializer of the Z type.
 template<typename A, typename Z>
 constexpr auto count_zero = [](A a = A{0}) { auto _a{a}; return [_a](Z z) mutable { return z == Z{0} ? ++_a : _a; }; };
 
