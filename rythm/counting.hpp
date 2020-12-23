@@ -27,6 +27,7 @@ constexpr auto drop_n_take_m = [](auto const off, auto const on) {
     }; 
 };
 
+// Yield alternating true for n calls and then false for m calls.
 constexpr auto take_n_drop_m = [](auto const on, auto const off) { 
     auto n = off, m = on + 1;
     auto active = true;
