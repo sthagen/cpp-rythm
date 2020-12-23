@@ -6,10 +6,11 @@ constexpr auto drop_n = [](auto n) { return [n]() mutable { return n ? !n-- : tr
 // Yield true for the first n calls and then false for every subsequent call.
 constexpr auto take_n = [](auto n) { return [n]() mutable { return n ? !!n-- : false; }; };
 
-// Yield true every nth call and false for every other call.
+// Yield false every nth call and true for every other call.
 constexpr auto drop_nth = [](auto n) { 
     auto period = n; return [period, n]() mutable { return !!--( n ? n : n = period); }; };
 
+// Yield true every nth call and false for every other call.
 constexpr auto take_nth = [](auto n) { 
     auto period = n; return [period, n]() mutable { return !--( n ? n : n = period); }; };
 
