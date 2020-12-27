@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(RYTHM VERSION 2020.12)
+project(rythm VERSION 2020.12 LANGUAGES C CXX)
 
 option(RYTHM_BUILD_EXAMPLES "whether or not to build the examples" ON)
 option(RYTHM_BUILD_TESTS "whether or not to build the tests" ON)
