@@ -2,6 +2,6 @@
 Header only behavior library
 
 ## Status
-Prototyping.
+Experimental
 
 **Note**: The default branch is `default`.
